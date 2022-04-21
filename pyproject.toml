@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "sh_supply_companies_stats_2022"
+version = "0.1.0"
+description = ""
+authors = ["Eden <guanchaoli@163.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+PyYAML = "5.4.1"
+requests = "2.27.1"
+pydantic = "1.8.2"
+pymongo = "^4.1.1"
+
+[tool.poetry.dev-dependencies]
+autopep8 = "^1.6.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
