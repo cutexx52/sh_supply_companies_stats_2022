@@ -23,4 +23,10 @@ class CompanyService:
             dict_writer = csv.DictWriter(output_file, keys)
             dict_writer.writeheader()
             dict_writer.writerows(to_csv)
-        
+    def query_companies_by_lt_score(self, score):
+        to_csv = company_collection.find({"tianyancha.data.percentileScore": {"$lt": score * 100}}, {"name": 1})
+        keys = to_csv[0].keys()
+        with open(f"outputs/lt_{score}_companies.csv", 'w', newline='') as output_file:
+            dict_writer = csv.DictWriter(output_file, keys)
+            dict_writer.writeheader()
+            dict_writer.writerows(to_csv)
